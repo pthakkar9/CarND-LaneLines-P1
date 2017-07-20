@@ -23,6 +23,11 @@ You can find following pipeline in `find_lanes_image` function.
 - Apply [Canny Edge Detection](https://en.wikipedia.org/wiki/Canny_edge_detector) with `canny` function
 - Define area of interest by defining polygon and using `region_of_interest` function
 - Draw Hough Lines by applying [Hough Transform](https://en.wikipedia.org/wiki/Hough_transform) algorithm with `hough_lines` function with defined thickness
+    - Calculate slope of lines
+    - Divide lines into left or right lines
+    - Find the best left and right lines to display on final image
+    - Find two end points for these lines
+    - Draw lines between these two end points with given thickness
 - Create *final image* by adding Hough Lines on original image by using `weighted_img` function
 
 ### 2. Identify potential shortcomings with your current pipeline
@@ -38,8 +43,9 @@ You can find following pipeline in `find_lanes_image` function.
 
 ### 4. Extra note
 
-- I have added extra photos and videos of my own. I have also attached result files after running my solution on them.
+- I have added extra photos of my own. I have also attached result files after running my solution on them.
 - I have added a couple of portrait images and their results to prove the shortcoming I listed above.
+- Other things that I can improve is - incorporate angle of photo to caluclate area of interest, brightness and dynamic kernel size to remove extra noise (like rain drops)
 
 -------------
 
